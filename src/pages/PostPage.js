@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
-import {RadioButtonGroupInput, useTranslate} from 'react-admin';
-import { Toolbar, Button, makeStyles, Box, Typography, Container, Card } from '@material-ui/core';
+import { RadioButtonGroupInput, useTranslate, useRedirect } from 'react-admin';
+import { Toolbar, Button, Box, Typography, Container, Card } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import { Form, Field, FormSpy } from 'react-final-form';
-import { useHistory } from 'react-router-dom';
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {
@@ -44,7 +44,7 @@ const getAvailableChoices = ({ type, resourceType }) => {
 const PostPage = () => {
   const classes = useStyles();
   const translate = useTranslate();
-  const history = useHistory();
+  const redirect = useRedirect();
 
   const onSubmit = useCallback(
     ({ type, resourceType, exchangeType }) => {
@@ -52,9 +52,9 @@ const PostPage = () => {
       let source = {};
       source['@type'] = 'mp:' + exchangeType + type;
       source[`mp:${type.toLowerCase()}OfResourceType`] = 'pair:' + resourceType;
-      history.push(basePath + '/create?source=' + JSON.stringify(source));
+      redirect(basePath + '/create?source=' + JSON.stringify(source));
     },
-    [history]
+    [redirect]
   );
 
   return (

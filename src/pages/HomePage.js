@@ -1,7 +1,7 @@
-import React from 'react';
-import { Box, Button, makeStyles, Typography, ThemeProvider } from '@material-ui/core';
-import { useGetIdentity, useTranslate, Link } from 'react-admin';
-import { Redirect } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Box, Button, Typography, ThemeProvider } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
+import { useGetIdentity, useTranslate, Link, useRedirect } from 'react-admin';
 import AppIcon from '../config/AppIcon';
 import theme from '../config/theme';
 
@@ -45,14 +45,19 @@ const useStyles = makeStyles(() => ({
 
 const HomePage = ({ title }) => {
   const classes = useStyles();
-  const { loading, identity } = useGetIdentity();
+  const redirect = useRedirect();
+  const { data: identity, isLoading } = useGetIdentity();
   const translate = useTranslate();
 
-  if (loading) return null;
+  useEffect(() => {
+    if (!isLoading && identity?.id) {
+      redirect('list', 'offers');
+    }
+  }, [identity.id, isLoading, redirect])
 
-  return identity?.id ? (
-    <Redirect to="/offers" />
-  ) : (
+  if (isLoading) return null;
+
+  return (
     <ThemeProvider theme={theme}>
       <Box className={classes.root}>
         <AppIcon className={classes.logo} />

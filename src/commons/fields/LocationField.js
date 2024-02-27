@@ -1,6 +1,6 @@
 import React from 'react';
-import { Box } from '@material-ui/core';
-import Alert from '@material-ui/lab/Alert';
+import { Box } from '@mui/material';
+import { Alert } from '@mui/material';
 import { MapField } from '@semapps/geo-components';
 import { ReferenceField } from '@semapps/field-components';
 import { useRecordContext } from 'react-admin';

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useGetIdentity } from 'react-admin';
-import { makeStyles, Typography, AppBar as MuiAppBar, Toolbar } from '@material-ui/core';
+import { Typography, AppBar as MuiAppBar, Toolbar } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import UserMenu from './UserMenu';
 
 const useStyles = makeStyles((theme) => ({

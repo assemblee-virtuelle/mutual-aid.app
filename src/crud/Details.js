@@ -1,9 +1,9 @@
 import React from 'react';
 import { SelectField, DateField } from 'react-admin';
 import IconsList from '../commons/lists/IconsList';
-import EventIcon from '@material-ui/icons/Event';
-import NaturePeopleOutlinedIcon from '@material-ui/icons/NaturePeopleOutlined';
-import SyncIcon from '@material-ui/icons/Sync';
+import EventIcon from '@mui/icons-material/Event';
+import NaturePeopleOutlinedIcon from '@mui/icons-material/NaturePeopleOutlined';
+import SyncIcon from '@mui/icons-material/Sync';
 import { types, resourceTypes } from '../config/constants';
 
 const Details = (props) => {

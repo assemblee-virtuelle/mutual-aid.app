@@ -1,6 +1,6 @@
 import React from 'react';
 import { useCreateContext } from 'react-admin';
-import { Container, Typography, Card, Box } from '@material-ui/core';
+import { Container, Typography, Card, Box } from '@mui/material';
 
 const CreatePage = ({ title, actions, children, ...rest }) => {
   const createContext = useCreateContext(rest);

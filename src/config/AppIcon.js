@@ -1,3 +1,3 @@
-import AppIcon from '@material-ui/icons/PanTool';
+import AppIcon from '@mui/icons-material/PanTool';
 
 export default AppIcon;

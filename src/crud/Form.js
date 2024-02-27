@@ -1,16 +1,15 @@
 import React from 'react';
 import {
   SimpleForm,
-  ImageInput,
   TextInput,
+  ImageField,
   required,
   SelectInput,
   FormDataConsumer,
   RadioButtonGroupInput, useTranslate,
 } from 'react-admin';
 import { MarkdownInput } from '@semapps/markdown-components';
-import { ImageField } from '@semapps/field-components';
-import { ReferenceInput } from '@semapps/input-components';
+import { ReferenceInput, ImageInput } from '@semapps/input-components';
 import { DateTimeInput } from '@semapps/date-components';
 import frLocale from 'date-fns/locale/fr';
 import BodyLabel from '../commons/lists/BodyLabel';

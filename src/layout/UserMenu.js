@@ -1,9 +1,10 @@
 import React, { forwardRef } from 'react';
 import { UserMenu as RaUserMenu, useGetIdentity, useTranslate } from 'react-admin';
-import { MenuItem, ListItemIcon, makeStyles } from '@material-ui/core';
-import PersonIcon from '@material-ui/icons/Person';
-import GroupIcon from '@material-ui/icons/Group';
-import HomeIcon from '@material-ui/icons/Home';
+import { MenuItem, ListItemIcon } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
+import PersonIcon from '@mui/icons-material/Person';
+import GroupIcon from '@mui/icons-material/Group';
+import HomeIcon from '@mui/icons-material/Home';
 import useOpenExternalApp from "../hooks/useOpenExternalApp";
 
 const useStyles = makeStyles((theme) => ({

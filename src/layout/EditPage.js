@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEditContext, Toolbar, SaveButton } from 'react-admin';
-import { Container, Typography, Card, Box, Grid, useMediaQuery } from '@material-ui/core';
+import { Container, Typography, Card, Box, Grid, useMediaQuery } from '@mui/material';
 
 const NoDeleteToolbar = (props) => (
   <Toolbar {...props}>
@@ -10,7 +10,6 @@ const NoDeleteToolbar = (props) => (
 
 const EditPage = ({ undoable, mutationMode, title, actions, className, hasDelete = true, children, ...rest }) => {
   const {
-    basePath,
     defaultTitle,
     // hasList,
     // hasShow,
@@ -43,7 +42,6 @@ const EditPage = ({ undoable, mutationMode, title, actions, className, hasDelete
           </Grid>
           {React.cloneElement(React.Children.only(children), {
             resource,
-            basePath,
             record,
             saving,
             save,

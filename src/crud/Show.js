@@ -1,6 +1,6 @@
 import React from 'react';
 import { ShowBase, DateField, TextField } from 'react-admin';
-import { useMediaQuery } from '@material-ui/core';
+import { useMediaQuery } from '@mui/material';
 import { ReferenceField } from '@semapps/field-components';
 import { useCheckAuthenticated } from '@semapps/auth-provider';
 import MarkdownField from '../commons/fields/MarkdownField';

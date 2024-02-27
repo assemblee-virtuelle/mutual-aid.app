@@ -1,14 +1,14 @@
 import React from 'react';
 import { useTranslate } from 'react-admin';
 import {
-  makeStyles,
   Typography,
   Container,
   IconButton,
   Box,
   Grid,
   Button,
-} from '@material-ui/core';
+} from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import { Link } from 'react-router-dom';
 import AppIcon from '../config/AppIcon';
 

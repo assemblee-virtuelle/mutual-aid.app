@@ -1,13 +1,14 @@
 import React from 'react';
 import { DateField, SelectField, TextField } from 'react-admin';
-import { makeStyles, Box } from '@material-ui/core';
+import { Box } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import { ReferenceField } from '@semapps/field-components';
-import EventIcon from '@material-ui/icons/Event';
+import EventIcon from '@mui/icons-material/Event';
 import { resourceTypes, types } from '../../config/constants';
 import Chip from '../../commons/Chip';
-import SyncIcon from '@material-ui/icons/Sync';
-import NaturePeopleOutlinedIcon from '@material-ui/icons/NaturePeopleOutlined';
-import FaceIcon from '@material-ui/icons/Face';
+import SyncIcon from '@mui/icons-material/Sync';
+import NaturePeopleOutlinedIcon from '@mui/icons-material/NaturePeopleOutlined';
+import FaceIcon from '@mui/icons-material/Face';
 
 const useStyles = makeStyles((theme) => ({
   title: {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { getFieldLabelTranslationArgs, useTranslate } from 'react-admin';
 import get from 'lodash/get';
-import { makeStyles } from '@material-ui/core';
+import makeStyles from '@mui/styles/makeStyles';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const BulletPointsListField = ({ children, record, resource, basePath }) => {
+const BulletPointsListField = ({ children, record, resource }) => {
   const classes = useStyles();
   const translate = useTranslate();
   return (
@@ -32,20 +32,10 @@ const BulletPointsListField = ({ children, record, resource, basePath }) => {
                   )}
                   :&nbsp;
                 </strong>
-                {React.cloneElement(field, {
-                  record,
-                  resource,
-                  basePath,
-                })}
+                {field}
               </>
-            ) : typeof field.type === 'string' ? (
-              field
             ) : (
-              React.cloneElement(field, {
-                record,
-                resource,
-                basePath,
-              })
+              field
             )}
           </li>
         ) : null

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useShowContext } from 'react-admin';
-import { Container, Typography, Card, Box, Grid, useMediaQuery } from '@material-ui/core';
+import { Container, Typography, Card, Box, Grid, useMediaQuery } from '@mui/material';
 import IntegratedImageField from '../commons/fields/IntegratedImageField';
 
 const ShowPage = ({ title, defaultTitle, details, actions, children, ...rest }) => {

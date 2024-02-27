@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { useListContext, linkToRecord, Link, DateField } from 'react-admin';
-import { Card, CardMedia, CardContent, makeStyles, Box, CircularProgress } from '@material-ui/core';
+import { useListContext, useCreatePath, Link, DateField } from 'react-admin';
+import { Card, CardMedia, CardContent, Box, CircularProgress } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -56,8 +57,10 @@ const useStyles = makeStyles((theme) => ({
 
 const CardsList = ({ CardComponent, link }) => {
   const classes = useStyles();
-  const { ids, data, loading } = useListContext();
-  return loading ? (
+  const { ids, data, isLoading } = useListContext();
+  const createPath = useCreatePath();
+
+  return isLoading ? (
     <Box display="flex" justifyContent="center" alignItems="center">
       <CircularProgress color="secondary" />
     </Box>
@@ -66,9 +69,9 @@ const CardsList = ({ CardComponent, link }) => {
       .filter((id) => data[id])
       .map((id) => {
         const image = data[id]['pair:depictedBy'];
-        const basePath = data[id].type.endsWith('Offer') ? '/offers' : '/requests';
+        const resource = data[id].type.endsWith('Offer') ? 'Offer' : 'Request';
         return (
-          <Link key={id} to={linkToRecord(basePath, id, link)} className={classes.root}>
+          <Link key={id} to={createPath({ resource, type: link, id })} className={classes.root}>
             <Card key={id} className={classes.details}>
               {image ? (
                 <CardMedia className={classes.image} image={Array.isArray(image) ? image[0] : image} />

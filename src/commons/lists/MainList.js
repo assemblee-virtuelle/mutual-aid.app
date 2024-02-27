@@ -1,7 +1,8 @@
 import React from 'react';
 import { useTranslate, getFieldLabelTranslationArgs, useShowContext } from 'react-admin';
 import get from 'lodash/get';
-import { Box, makeStyles } from '@material-ui/core';
+import { Box } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 
 const useStyles = makeStyles((theme) => ({
   divider: {
@@ -17,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
 const MainList = ({ children, divider, Label }) => {
   const translate = useTranslate();
   const classes = useStyles();
-  const { basePath, loaded, record, resource } = useShowContext();
+  const { loaded, record, resource } = useShowContext();
   if (!loaded) return null;
 
   return (
@@ -36,20 +37,12 @@ const MainList = ({ children, divider, Label }) => {
                     })
                   )}
                 </Label>
-                {React.cloneElement(field, {
-                  record,
-                  resource,
-                  basePath,
-                })}
+                {React.cloneElement(field)}
               </>
             ) : typeof field.type === 'string' ? (
               field
             ) : (
-              React.cloneElement(field, {
-                record,
-                resource,
-                basePath,
-              })
+              React.cloneElement(field)
             )}
           </div>
         ) : null

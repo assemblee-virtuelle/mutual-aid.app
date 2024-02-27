@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { Box, Typography, Container, Card as MuiCard } from '@material-ui/core';
+import { Box, Typography, Container, Card as MuiCard } from '@mui/material';
 import { ListBase, useTranslate } from 'react-admin';
 import { useCheckAuthenticated } from '@semapps/auth-provider';
 import CardsList from '../commons/lists/CardsList';
@@ -96,7 +96,6 @@ const List = () => {
       </Box>
       <ListBase
         resource="OfferAndRequest"
-        basePath="/OfferAndRequest"
         perPage={1000}
         sort={{ field: 'dc:created', order: 'DESC' }}
         filter={{ sparqlWhere }}

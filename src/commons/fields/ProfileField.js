@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRecordContext } from 'react-admin';
-import { Grid, Avatar, makeStyles, Typography } from '@material-ui/core';
+import { Grid, Avatar, Typography } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import { formatUsername } from '../../utils';
 
 const useStyles = makeStyles((theme) => ({

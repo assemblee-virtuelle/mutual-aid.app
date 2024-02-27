@@ -1,5 +1,6 @@
 import React from 'react';
-import { makeStyles, Modal, Fade, Backdrop } from '@material-ui/core';
+import { Modal, Fade, Backdrop } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import { useRecordContext } from 'react-admin';
 
 const useStyles = makeStyles((theme) => ({

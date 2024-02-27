@@ -6,9 +6,9 @@ import {
   DialogTitle,
   DialogContent,
   DialogActions,
-  makeStyles,
   useMediaQuery,
-} from "@material-ui/core";
+} from "@mui/material";
+import makeStyles from '@mui/styles/makeStyles';
 import { useCheckAuthenticated } from "@semapps/auth-provider";
 import ContactsShareList from "./ContactsShareList";
 import {
@@ -210,7 +210,6 @@ const ShareDialog = ({ close, resourceUri }) => {
       <DialogContent className={classes.listForm}>
         <ListBase
           resource="Profile"
-          basePath="/Profile"
           perPage={1000}
           sort={{ field: "vcard:given-name", order: "ASC" }}
         >
